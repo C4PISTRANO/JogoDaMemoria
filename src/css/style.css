@@ -10,7 +10,7 @@ body cards .cardsbx {
     width: 10%;
 }
 
-#cards {
+body .cards {
     position: relative;
     background: #34353a;
     min-height: 100vh;
