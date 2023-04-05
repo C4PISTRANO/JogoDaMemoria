@@ -4,6 +4,8 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif; 
+	align-itens: center;
+	align: center;
 }
 
 body cards .cardsbx {
