@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+body cards .cardsbx {
+    width: 10%;
+}
+
+#cards {
+    position: relative;
+    background: #34353a;
+    min-height: 100vh;
+    padding: 120px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
