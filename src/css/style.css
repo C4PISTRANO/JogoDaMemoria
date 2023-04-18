@@ -4,12 +4,20 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif; 
-	align-itens: center;
-	align: center;
 }
 
-body cards .cardsbx {
-    width: 10%;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
 body .cards {
@@ -20,4 +28,28 @@ body .cards {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    margin: 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+body .cardsbx img {
+    width: 10%;
+    border: 3px solid #ffffff00;
+    
+}
+
+body .cards .cardsbx:hover {
+    transition: 0.5s;
+    width: 15%;
+    border: 3px solid red;
+    
+}
+
+footer {
+    align-items: center;
+    font-size: 1rem;
 }
