@@ -1,4 +1,4 @@
-Definiçclasses e heranças:
+Definição das classes e heranças:
 
 1. Classe base: Carta
    - Descrição: Representa uma carta do jogo da memória.
@@ -32,5 +32,3 @@ Definiçclasses e heranças:
      - IniciarJogo(): Inicializa o jogo da memória, adicionando as cartas ao tabuleiro e embaralhando-as.
      - Jogar(carta1, carta2): Realiza uma jogada, virando duas cartas e comparando-as.
      - VerificarFimJogo(): Verifica se todas as cartas do tabuleiro estão viradas para cima.
-
-Essas são apenas algumas das classes e heranças possíveis para um jogo da memória com palavras. Dependendo da complexidade e recursos do jogo, poderiam ser adicionadas outras classes, como uma classe "Jogador" para controlar a pontuação e o progresso do jogador, ou uma classe "JogoMemoria" para controlar o fluxo do jogo em geral.
