@@ -1,4 +1,4 @@
-Em um jogo da memória com palavras, podemos definir as seguintes classes e heranças:
+Definiçclasses e heranças:
 
 1. Classe base: Carta
    - Descrição: Representa uma carta do jogo da memória.
