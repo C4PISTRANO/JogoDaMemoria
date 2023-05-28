@@ -1,2 +1,0 @@
-https://marina-ferreira.github.io/projects/js/memory-game/
-https://www.freecodecamp.org/news/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae
