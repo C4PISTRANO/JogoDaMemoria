@@ -1,34 +1,37 @@
-Definição das classes e heranças:
+JOGO DA MEMÓRIA - Trabalho final da disciplina de DW2 - Desenvolvimento Web II
 
-1. Classe base: Carta
-   - Descrição: Representa uma carta do jogo da memória.
-   - Atributos:
-     - Palavra: A palavra associada à carta.
-     - Virada: Indica se a carta está virada para cima ou para baixo.
-   - Métodos:
-     - Virar(): Vira a carta para cima ou para baixo.
-     - Comparar(carta): Compara a palavra de duas cartas para verificar se são iguais.
 
-2. Classe Filha: CartaViradaCima (herda de Carta)
-   - Descrição: Representa uma carta que está virada para cima.
-   - Métodos:
-     - Exibir(): Exibe a palavra associada à carta.
 
-3. Classe Filha: CartaViradaBaixo (herda de Carta)
-   - Descrição: Representa uma carta que está virada para baixo.
 
-4. Classe base: Tabuleiro
-   - Descrição: Representa o tabuleiro do jogo da memória.
-   - Atributos:
-     - Cartas: Uma lista de todas as cartas presentes no tabuleiro.
-   - Métodos:
-     - AdicionarCarta(carta): Adiciona uma carta ao tabuleiro.
-     - RemoverCarta(carta): Remove uma carta do tabuleiro.
-     - ExibirTabuleiro(): Exibe o estado atual do tabuleiro.
+LAYOUT:
+ 
+Tabuleiro de cartas com colunas e linhas. (ver número de cartas) 
+Uma imagem na parte da frente
+Uma imagem na parte de trás.
 
-5. Classe Filha: TabuleiroJogoMemoria (herda de Tabuleiro)
-   - Descrição: Representa o tabuleiro específico do jogo da memória.
-   - Métodos:
-     - IniciarJogo(): Inicializa o jogo da memória, adicionando as cartas ao tabuleiro e embaralhando-as.
-     - Jogar(carta1, carta2): Realiza uma jogada, virando duas cartas e comparando-as.
-     - VerificarFimJogo(): Verifica se todas as cartas do tabuleiro estão viradas para cima.
+CLASSES:
+ 
+Classe para as cartas: 
+Esta classe deve incluir propriedades para a imagem da frente e da parte de trás, bem como um método para verificar se a carta foi selecionada corretamente.
+
+Classe para o jogo: 
+Crie uma classe para o jogo em si. Esta classe deve incluir propriedades para o número de cartas, a matriz de cartas e um método para iniciar o jogo.
+
+Classe para o tabuleiro: 
+Crie uma classe para o tabuleiro do jogo. Esta classe deve incluir um método para embaralhar as cartas e outro para exibir o tabuleiro na tela.
+
+Adicionar herança: 
+Crie uma classe para as cartas viradas para cima que herda da classe Carta, e uma classe para as cartas viradas para baixo que também herda da classe Carta. Isso permite que você crie instâncias das cartas viradas para cima e para baixo usando a mesma classe pai.
+
+
+FUNÇÕES:
+
+Adicionar interação: 
+Crie um evento de clique para as cartas, para que o jogador possa virá-las para encontrar os pares corretos. Quando duas cartas forem selecionadas, verifique se elas correspondem. Se não corresponderem, volte a virá-las de frente para baixo. Se corresponderem, deixe-as viradas para cima.
+
+Adicionar lógica do jogo: 
+Crie uma função para verificar se o jogo foi concluído com sucesso. 
+Se todas as cartas estiverem viradas para cima, o jogo terminou e o jogador ganhou.
+
+Adicionar pontuação: 
+Adicione um sistema de pontuação para o jogo, para que o jogador possa acompanhar seu desempenho.
