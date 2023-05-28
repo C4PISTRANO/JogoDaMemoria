@@ -1,48 +1,83 @@
-// Classe pai
-class Personagem {
-    constructor(nome, tipo) {
-      this.nome = nome;
-      this.tipo = tipo;
+class Carta {
+  constructor(element, valor, viradaParaCima) {
+    this.element = element;
+    this.valor = valor;
+    this.viradaParaCima = viradaParaCima;
+  }
+
+  virar() {
+    if (this.viradaParaCima) {
+      this.element.classList.remove('flip');
+    } else {
+      this.element.classList.add('flip');
     }
-  
-    atacar() {
-      console.log(`${this.nome} está atacando!`);
+    this.viradaParaCima = !this.viradaParaCima;
+  }
+}
+
+class CartaAnimais extends Carta {
+  constructor(element, valor, viradaParaCima, animal) {
+    super(element, valor, viradaParaCima);
+    this.animal = animal;
+
+    this.element.addEventListener('click', this.flipCard.bind(this));
+  }
+
+  flipCard() {
+    if (CartaAnimais.lockBoard || this.viradaParaCima) return;
+    if (!CartaAnimais.hasFlippedCard) {
+      this.virar();
+      CartaAnimais.hasFlippedCard = true;
+      CartaAnimais.firstCard = this;
+    } else {
+      this.virar();
+      CartaAnimais.secondCard = this;
+      CartaAnimais.checkForMatch();
     }
   }
-  
-  // Subclasse Guerreiro
-  class Guerreiro extends Personagem {
-    constructor(nome, tipo, arma) {
-      super(nome, tipo);
-      this.arma = arma;
-    }
-  
-    atacar() {
-      console.log(`${this.nome} está atacando com ${this.arma}!`);
-    }
+
+  static checkForMatch() {
+    let isMatch = CartaAnimais.firstCard.valor === CartaAnimais.secondCard.valor;
+
+    isMatch ? CartaAnimais.disableCards() : CartaAnimais.unflipCards();
   }
-  
-  // Subclasse Mago
-  class Mago extends Personagem {
-    constructor(nome, tipo, magia) {
-      super(nome, tipo);
-      this.magia = magia;
-    }
-  
-    atacar() {
-      console.log(`${this.nome} está lançando ${this.magia}!`);
-    }
+
+  static disableCards() {
+    CartaAnimais.firstCard.element.removeEventListener('click', CartaAnimais.firstCard.flipCard);
+    CartaAnimais.secondCard.element.removeEventListener('click', CartaAnimais.secondCard.flipCard);
+
+    CartaAnimais.resetBoard();
   }
-  
-  // Criando uma instância do Guerreiro
-  const guerreiro1 = new Guerreiro("Conan", "Guerreiro", "Espada");
-  
-  // Chamando o método atacar() do guerreiro
-  guerreiro1.atacar(); // Saída: Conan está atacando com Espada!
-  
-  // Criando uma instância do Mago
-  const mago1 = new Mago("Merlin", "Mago", "Bola de Fogo");
-  
-  // Chamando o método atacar() do mago
-  mago1.atacar(); // Saída: Merlin está lançando Bola de Fogo!
-  
+
+  static unflipCards() {
+    CartaAnimais.lockBoard = true;
+
+    setTimeout(() => {
+      CartaAnimais.firstCard.virar();
+      CartaAnimais.secondCard.virar();
+
+      CartaAnimais.resetBoard();
+    }, 1500);
+  }
+
+  static resetBoard() {
+    CartaAnimais.hasFlippedCard = false;
+    CartaAnimais.lockBoard = false;
+    CartaAnimais.firstCard = null;
+    CartaAnimais.secondCard = null;
+  }
+}
+
+const cards = document.querySelectorAll('.memory-card');
+cards.forEach(card => {
+  const framework = card.getAttribute('data-framework');
+  const animal = card.querySelector('.front-face').alt;
+  new CartaAnimais(card, framework, false, animal);
+});
+
+(function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * cards.length);
+    card.style.order = randomPos;
+  });
+})();
