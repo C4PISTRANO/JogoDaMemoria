@@ -118,16 +118,16 @@ body {
     flex-wrap: wrap;
     perspective: 10000px;
   }
-  }
+}
 
   @media (max-width: 900px) {
-    .memory-game {
-      width: 30em;
-      height: 50em;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      flex-wrap: wrap;
-      perspective: 10000px;
-    }
-    }
+  .memory-game {
+    width: 30em;
+    height: 50em;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    flex-wrap: wrap;
+    perspective: 10000px;
+  }
+}
