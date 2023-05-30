@@ -39,7 +39,13 @@ class CartaAnimais extends Carta {
   static checkForMatch() {
     let isMatch = CartaAnimais.firstCard.valor === CartaAnimais.secondCard.valor;
 
-    isMatch ? CartaAnimais.disableCards() : CartaAnimais.unflipCards();
+    if (isMatch) {
+      CartaAnimais.disableCards();
+      CartaAnimais.updateScore(true);
+    } else {
+      CartaAnimais.unflipCards();
+      CartaAnimais.updateScore(false);
+    }
   }
 
   static disableCards() {
@@ -66,6 +72,55 @@ class CartaAnimais extends Carta {
     CartaAnimais.firstCard = null;
     CartaAnimais.secondCard = null;
   }
+
+  static updateScore(isMatch) {
+    if (isMatch) {
+      currentPlayer.score++;
+    } else {
+      currentPlayer = getNextPlayer();
+      function updateCurrentPlayerHighlight() {
+        const player1Element = document.getElementById('player1');
+        const player2Element = document.getElementById('player2');
+      
+        if (currentPlayer === players[0]) {
+          player1Element.classList.add('current-player');
+          player2Element.classList.remove('current-player');
+        } else {
+          player1Element.classList.remove('current-player');
+          player2Element.classList.add('current-player');
+        }
+      }
+      
+      updateCurrentPlayerHighlight(); // Chame essa função após a definição de currentPlayer e players.
+      
+    }
+
+    players.forEach(player => {
+      const scoreElement = document.getElementById(`score-${player.id}`);
+      scoreElement.textContent = `Pontos: ${player.score}`;
+    });
+  }
+}
+
+const players = [
+  { id: 1, name: '', score: 0 },
+  { id: 2, name: '', score: 0 }
+];
+let currentPlayer = players[0];
+
+const player1Input = document.getElementById('player1');
+const player2Input = document.getElementById('player2');
+
+player1Input.addEventListener('input', function() {
+  players[0].name = player1Input.value;
+});
+
+player2Input.addEventListener('input', function() {
+  players[1].name = player2Input.value;
+});
+
+function getNextPlayer() {
+  return currentPlayer === players[0] ? players[1] : players[0];
 }
 
 const cards = document.querySelectorAll('.memory-card');
@@ -81,3 +136,4 @@ cards.forEach(card => {
     card.style.order = randomPos;
   });
 })();
+
