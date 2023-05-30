@@ -38,4 +38,4 @@ Mensagem de finalização: Uma mensagem parabenizando o jogador
 Pontuação: Um sistema de pontuação para o jogo, para que o jogador possa acompanhar seu desempenho.
 
 <hr>
-<p>Desenvolvido por: Mariana Cavalle, Hebert Gomes Sanches e <a href="https://github.com/C4PISTRANO">Raphael Ferreira Capistrano</a></p>
+<p>Desenvolvido por: <a href="https://github.com/mcavalle">Mariana Cavalle</a>, <a href="https://github.com/hebertsanches">Hebert Gomes Sanches</a> e <a href="https://github.com/C4PISTRANO">Raphael Ferreira Capistrano</a></p>
