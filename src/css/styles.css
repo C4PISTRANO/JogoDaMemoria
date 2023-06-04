@@ -71,7 +71,7 @@ body {
   grid-template-columns: repeat(6,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
-  border: red solid 2px;
+  /* border: red solid 2px; */
 }
 
 .memory-card {
