@@ -64,17 +64,18 @@ body {
 }
 
 .memory-game {
-  width: 60em;
-  height: 60em;
+  width: 70em;
+  height: 35em;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(6,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
-  /* border: red solid 2px; */
+  border: red solid 2px;
 }
 
 .memory-card {
+  height: 95%;
   margin: 5px;
   position: relative;
   transform: scale(1);
@@ -110,25 +111,26 @@ body {
 /*responsive*/
 @media (max-width: 1200px) {
   .memory-game {
-    width: 40em;
-    height: 70em;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    flex-wrap: wrap;
-    perspective: 10000px;
+    width: 46.6em;
+    height: 52.5em;
+    /* margin: auto;
+    display: grid; */
+    grid-template-columns: repeat(4,1fr);
+    /* flex-wrap: wrap;
+    perspective: 10000px; */
   }
+
 }
 
   @media (max-width: 900px) {
   .memory-game {
-    width: 30em;
-    height: 50em;
-    margin: auto;
-    display: grid;
+    width: 35em;
+    height: 70em;
+    /* margin: auto;
+    display: grid; */
     grid-template-columns: repeat(3,1fr);
-    flex-wrap: wrap;
-    perspective: 10000px;
+    /* flex-wrap: wrap;
+    perspective: 10000px; */
   }
 }
 .player-names {
