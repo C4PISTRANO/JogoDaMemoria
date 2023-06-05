@@ -16,18 +16,30 @@
 <body>
   <div class="board">
     <div class="titles">
-      <h1>Jogo da Memória</h1>
+      <div class="banner">
+        <h1>Jogo da Memória</h1>
+        <img src="../img/brain.png" alt="Logo cérebro pulsando">
+      </div>
       <h2>Animais</h2>
+      <span class="level-buttons">
+        <a href="./animais1.html" class="selected">Nível 1</a>
+        <a href="./animais2.html">Nível 2</a>
+        <a href="./animais3.html">Nível 3</a>
+      </span>
     </div>
 
-    <div class="player-names">
-      <input type="text" id="player1" placeholder="Jogador 1" class="current-player">
-      <span class="player-score" id="score-1">Pontos: 0</span>
-    </div>
-    <div class="player-names">
-      <input type="text" id="player2" placeholder="Jogador 2">
-      <span class="player-score" id="score-2">Pontos: 0</span>
-    </div>
+
+    <span class="score">
+      <div class="player-names">
+        <span class="player-score" id="score-1">Pontos: 0</span>
+        <input type="text" id="player1" placeholder="Jogador 1" class="current-player">
+      </div>
+      <div class="versus">X</div>
+      <div class="player-names">
+        <input type="text" id="player2" placeholder="Jogador 2">
+        <span class="player-score" id="score-2">Pontos: 0</span>
+      </div>
+    </span>
 
     <section class="memory-game">
       <div class="memory-card" data-framework="dog">

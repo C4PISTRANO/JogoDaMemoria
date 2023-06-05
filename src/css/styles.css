@@ -21,7 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5em;
   padding: 10px;
   margin-bottom: 30px;
   /* border: red solid 2px; */
@@ -29,38 +28,101 @@ body {
 
 .titles h1 {
   color: limegreen;
-}
-.titles h2 {
-  color: #fff;
+  font-size: 3em;
 }
 
-.buttons {
+.titles h2 {
+  color: #fff;
+  font-size: 2em;
+}
+
+.titles .banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.titles .banner img {
+  width: 7em;
+  height: auto;
+  padding: 10px;
+}
+
+.level-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 60%;
+  max-width: 100%;
   margin: auto;
-  
+  /* border: red solid 2px; */
 }
 
-.buttons a {
+.level-buttons a {
   align-items: center;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1em;
   color: #060AB2;
   padding: 10px 50px;
-  margin: 10px;
+  margin: 5px;
   /* border: red solid 2px; */
   background: limegreen;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 700;
 }
 
-.buttons a:hover {
+.level-buttons a:hover {
   background: lime;
   color: rgb(0, 162, 255);
 
+}
+
+.level-buttons .selected {
+  opacity: 0.5;
+  cursor: default;
+  background: lime;
+  color: rgb(0, 162, 255);
+}
+
+.score {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.player-names input {
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.player-score {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px;
+}
+
+.current-player {
+  background-color: limegreen;
+  color: #fff;
+  font-weight: 900;
+}
+
+.versus {
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 900;
+  padding: 5px;
 }
 
 .memory-game {
@@ -108,6 +170,38 @@ body {
   transform: rotateY(180deg);
 }
 
+
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 60%;
+  margin: auto;
+  
+}
+
+.buttons a {
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #060AB2;
+  padding: 10px 50px;
+  margin: 10px;
+  /* border: red solid 2px; */
+  background: limegreen;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.buttons a:hover {
+  background: lime;
+  color: rgb(0, 162, 255);
+
+}
+
 /*responsive*/
 @media (max-width: 1200px) {
   .memory-game {
@@ -132,27 +226,5 @@ body {
     /* flex-wrap: wrap;
     perspective: 10000px; */
   }
-}
-.player-names {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.player-names input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px; /* Adicione um espaçamento à direita para separar as caixas de nome */
-}
-.player-score {
-  font-size: 1.2em;
-  font-weight: 700;
-  color: #fff;
-}
-.current-player {
-  background-color: limegreen;
-  color: #fff;
 }
 
