@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../img/brain.png" />
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="board">
+    <div class="titles">
+      <div class="banner">
+        <h1>Jogo da Memória</h1>
+        <img src="../img/brain.png" alt="Logo cérebro pulsando">
+      </div>
+      <h2>Animais</h2>
+      <span class="level-buttons">
+        <a href="./animais1.html" class="selected">Nível 1</a>
+        <a href="./animais2.html">Nível 2</a>
+        <a href="./animais3.html">Nível 3</a>
+      </span>
+    </div>
+
+
+    <span class="score">
+      <div class="player-names">
+        <span class="player-score" id="score-1">Pontos: 0</span>
+        <input type="text" id="player1" placeholder="Jogador 1" class="current-player">
+      </div>
+      <div class="versus">X</div>
+      <div class="player-names">
+        <input type="text" id="player2" placeholder="Jogador 2">
+        <span class="player-score" id="score-2">Pontos: 0</span>
+      </div>
+    </span>
+
+    <section class="memory-game">
+      <div class="memory-card" data-framework="dog">
+        <img class="front-face" src="../img/dog.jpg" alt="Dog" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="dog">
+        <img class="front-face" src="../img/dog.jpg" alt="Dog" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+      <div class="memory-card" data-framework="cat">
+        <img class="front-face" src="../img/cat.jpg" alt="Gato" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="cat">
+        <img class="front-face" src="../img/cat.jpg" alt="Gato" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+      <div class="memory-card" data-framework="cow">
+        <img class="front-face" src="../img/cow.jpeg" alt="Vaca" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="cow">
+        <img class="front-face" src="../img/cow.jpeg" alt="Vaca" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+      <div class="memory-card" data-framework="monkey">
+        <img class="front-face" src="../img/monkey.jpeg" alt="Macaco" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="monkey">
+        <img class="front-face" src="../img/monkey.jpeg" alt="Macaco" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+      <div class="memory-card" data-framework="alligator">
+        <img class="front-face" src="../img/alligator.jpg" alt="Jacaré" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="alligator">
+        <img class="front-face" src="../img/alligator.jpg" alt="Jacaré" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+      <div class="memory-card" data-framework="squirrel">
+        <img class="front-face" src="../img/squirrel.jpg" alt="Esquilo" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+      <div class="memory-card" data-framework="squirrel">
+        <img class="front-face" src="../img/squirrel.jpg" alt="Esquilo" />
+        <img class="back-face" src="../img/card back green.png" alt="Back card" />
+      </div>
+
+    </section>
+
+    <span class="buttons">
+      <a href="../../index.html">Mudar Tema</a>
+      <a href="./animais.html">Jogar Novamente</a>
+    </span>
+
+
+  </div>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

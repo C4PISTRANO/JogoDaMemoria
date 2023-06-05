@@ -126,11 +126,32 @@ body {
 }
 
 .memory-game {
+  width: 46em;
+  height: 50em;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  flex-wrap: wrap;
+  perspective: 10000px;
+  /* border: red solid 2px; */
+}
+
+.memory-game2 {
   width: 70em;
-  height: 35em;
+  height: 50em;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(6,1fr);
+  flex-wrap: wrap;
+  perspective: 10000px;
+  /* border: red solid 2px; */
+}
+.memory-game3 {
+  width: 93em;
+  height: 50em;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
   /* border: red solid 2px; */
@@ -180,16 +201,17 @@ body {
   flex-wrap: wrap;
   max-width: 60%;
   margin: auto;
-  
 }
 
 .buttons a {
   align-items: center;
   text-decoration: none;
+  text-align: center;
   font-size: 1.5em;
   color: #060AB2;
-  padding: 10px 50px;
-  margin: 10px;
+  width: 10em;
+  padding: 10px 20px;
+  margin: 5px;
   /* border: red solid 2px; */
   background: limegreen;
   border-radius: 5px;
@@ -207,11 +229,7 @@ body {
   .memory-game {
     width: 46.6em;
     height: 52.5em;
-    /* margin: auto;
-    display: grid; */
     grid-template-columns: repeat(4,1fr);
-    /* flex-wrap: wrap;
-    perspective: 10000px; */
   }
 
 }
@@ -220,11 +238,7 @@ body {
   .memory-game {
     width: 35em;
     height: 70em;
-    /* margin: auto;
-    display: grid; */
     grid-template-columns: repeat(3,1fr);
-    /* flex-wrap: wrap;
-    perspective: 10000px; */
   }
 }
 
