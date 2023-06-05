@@ -126,8 +126,8 @@ body {
 }
 
 .memory-game {
-  width: 46em;
-  height: 50em;
+  width: 35em;
+  height: 35em;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -137,8 +137,8 @@ body {
 }
 
 .memory-game2 {
-  width: 70em;
-  height: 50em;
+  width: 53em;
+  height: 35em;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(6,1fr);
@@ -147,8 +147,8 @@ body {
   /* border: red solid 2px; */
 }
 .memory-game3 {
-  width: 93em;
-  height: 50em;
+  width: 70em;
+  height: 35em;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(8,1fr);
@@ -231,11 +231,30 @@ body {
     height: 52.5em;
     grid-template-columns: repeat(4,1fr);
   }
-
+  .memory-game2 {
+    width: 46.6em;
+    height: 52.5em;
+    grid-template-columns: repeat(4,1fr);
+  }
+  .memory-game3 {
+    width: 46.6em;
+    height: 52.5em;
+    grid-template-columns: repeat(4,1fr);
+  }
 }
 
   @media (max-width: 900px) {
   .memory-game {
+    width: 35em;
+    height: 70em;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .memory-game2 {
+    width: 35em;
+    height: 70em;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .memory-game3 {
     width: 35em;
     height: 70em;
     grid-template-columns: repeat(3,1fr);
