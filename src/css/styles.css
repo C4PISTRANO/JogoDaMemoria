@@ -224,6 +224,21 @@ body {
 
 }
 
+#victory-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: limegreen;
+  
+}
+
+.hidden {
+  display: none;
+}
+
 /*responsive*/
 @media (max-width: 1200px) {
   .memory-game {

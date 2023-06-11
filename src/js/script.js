@@ -78,10 +78,11 @@ class CartaAnimais extends Carta {
       currentPlayer.score++;
     } else {
       currentPlayer = getNextPlayer();
+      currentPlayer.name = document.getElementById(`player${currentPlayer.id}`).value;
       function updateCurrentPlayerHighlight() {
         const player1Element = document.getElementById('player1');
         const player2Element = document.getElementById('player2');
-      
+
         if (currentPlayer === players[0]) {
           player1Element.classList.add('current-player');
           player2Element.classList.remove('current-player');
@@ -90,15 +91,32 @@ class CartaAnimais extends Carta {
           player2Element.classList.add('current-player');
         }
       }
-      
+
       updateCurrentPlayerHighlight(); // Chame essa função após a definição de currentPlayer e players.
-      
+
     }
 
     players.forEach(player => {
       const scoreElement = document.getElementById(`score-${player.id}`);
       scoreElement.textContent = `Pontos: ${player.score}`;
     });
+
+    const totalCartas = document.querySelectorAll('.memory-card').length;
+    const cartasViradas = document.querySelectorAll('.flip').length;
+
+
+    //Mostrar mensagem de vitória e esconder seção das cartas.
+    if (cartasViradas === totalCartas) {
+      const mensagemVitoria = document.getElementById('victory-msg');
+      mensagemVitoria.textContent = `Parabéns ${currentPlayer.name} você venceu com ${currentPlayer.score} pontos!!`;
+
+      cards.forEach(card => {
+        card.classList.add('hidden');
+        const section = document.querySelector('section');
+        section.classList.add('hidden');
+      });
+    };
+
   }
 }
 
@@ -111,11 +129,11 @@ let currentPlayer = players[0];
 const player1Input = document.getElementById('player1');
 const player2Input = document.getElementById('player2');
 
-player1Input.addEventListener('input', function() {
+player1Input.addEventListener('input', function () {
   players[0].name = player1Input.value;
 });
 
-player2Input.addEventListener('input', function() {
+player2Input.addEventListener('input', function () {
   players[1].name = player2Input.value;
 });
 
@@ -136,4 +154,3 @@ cards.forEach(card => {
     card.style.order = randomPos;
   });
 })();
-
