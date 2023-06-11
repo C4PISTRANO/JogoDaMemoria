@@ -228,17 +228,17 @@ body {
 @media (max-width: 1200px) {
   .memory-game {
     width: 46.6em;
-    height: 52.5em;
+    height: 42.5em;
     grid-template-columns: repeat(4,1fr);
   }
   .memory-game2 {
     width: 46.6em;
-    height: 52.5em;
+    height: 72.5em;
     grid-template-columns: repeat(4,1fr);
   }
   .memory-game3 {
     width: 46.6em;
-    height: 52.5em;
+    height: 82.5em;
     grid-template-columns: repeat(4,1fr);
   }
 }
@@ -246,17 +246,17 @@ body {
   @media (max-width: 900px) {
   .memory-game {
     width: 35em;
-    height: 70em;
+    height: 60em;
     grid-template-columns: repeat(3,1fr);
   }
   .memory-game2 {
     width: 35em;
-    height: 70em;
+    height: 90em;
     grid-template-columns: repeat(3,1fr);
   }
   .memory-game3 {
     width: 35em;
-    height: 70em;
+    height: 120em;
     grid-template-columns: repeat(3,1fr);
   }
 }
