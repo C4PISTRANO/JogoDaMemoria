@@ -101,17 +101,16 @@ class CartaAnimais extends Carta {
       scoreElement.textContent = `Pontos: ${player.score}`;
     });
 
+    
+    //Mostrar mensagem de vitória e esconder seção das cartas.
     const totalCartas = document.querySelectorAll('.memory-card').length;
     const cartasViradas = document.querySelectorAll('.flip').length;
 
-
-    //Mostrar mensagem de vitória e esconder seção das cartas.
     if (cartasViradas === totalCartas) {
       const mensagemVitoria = document.getElementById('victory-msg');
       mensagemVitoria.textContent = `Parabéns ${currentPlayer.name} você venceu com ${currentPlayer.score} pontos!!`;
 
       cards.forEach(card => {
-        card.classList.add('hidden');
         const section = document.querySelector('section');
         section.classList.add('hidden');
       });
