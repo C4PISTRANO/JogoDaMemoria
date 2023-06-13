@@ -23,7 +23,6 @@ body {
   align-items: center;
   padding: 10px;
   margin-bottom: 30px;
-  /* border: red solid 2px; */
 }
 
 .titles h1 {
@@ -55,7 +54,6 @@ body {
   justify-content: center;
   max-width: 100%;
   margin: auto;
-  /* border: red solid 2px; */
 }
 
 .level-buttons a {
@@ -65,7 +63,6 @@ body {
   color: #060AB2;
   padding: 10px 50px;
   margin: 5px;
-  /* border: red solid 2px; */
   background: limegreen;
   border-radius: 5px;
   font-weight: 700;
@@ -133,7 +130,6 @@ body {
   grid-template-columns: repeat(4,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
-  /* border: red solid 2px; */
 }
 
 .memory-game2 {
@@ -144,7 +140,6 @@ body {
   grid-template-columns: repeat(6,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
-  /* border: red solid 2px; */
 }
 .memory-game3 {
   width: 70em;
@@ -154,7 +149,6 @@ body {
   grid-template-columns: repeat(8,1fr);
   flex-wrap: wrap;
   perspective: 10000px;
-  /* border: red solid 2px; */
 }
 
 .memory-card {
@@ -212,7 +206,6 @@ body {
   width: 10em;
   padding: 10px 20px;
   margin: 5px;
-  /* border: red solid 2px; */
   background: limegreen;
   border-radius: 5px;
   font-weight: 700;

@@ -124,7 +124,8 @@ class CartaAnimais extends Carta {
     if (cartasViradas === totalCartas) {
       const mensagemVitoria = document.getElementById('victory-msg');
       mensagemVitoria.textContent = `Parabéns ${currentPlayer.name} você venceu com ${currentPlayer.score} pontos!!`;
-
+      
+      //esconder as cartas.
       cards.forEach(card => {
         const section = document.querySelector('section');
         section.classList.add('hidden');
@@ -162,6 +163,7 @@ cards.forEach(card => {
   new CartaAnimais(card, framework, false, animal);
 });
 
+//embaralhar as cartas.
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * cards.length);
