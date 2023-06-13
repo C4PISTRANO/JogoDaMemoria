@@ -1,77 +1,92 @@
+// Classe base para representar uma carta
 class Carta {
   constructor(element, valor, viradaParaCima) {
-    this.element = element;
-    this.valor = valor;
-    this.viradaParaCima = viradaParaCima;
+    this.element = element; // Elemento HTML da carta
+    this.valor = valor; // Valor da carta (pode ser usado para verificar correspondência)
+    this.viradaParaCima = viradaParaCima; // Indica se a carta está virada para cima
   }
 
+  // Método para virar a carta
   virar() {
     if (this.viradaParaCima) {
-      this.element.classList.remove('flip');
+      this.element.classList.remove('flip'); // Remove a classe 'flip' para esconder a face da carta
     } else {
-      this.element.classList.add('flip');
+      this.element.classList.add('flip'); // Adiciona a classe 'flip' para mostrar a face da carta
     }
-    this.viradaParaCima = !this.viradaParaCima;
+    this.viradaParaCima = !this.viradaParaCima; // Altera o estado da carta (virada para cima ou para baixo)
   }
 }
 
+// Classe que representa uma carta de animais, estendendo a classe Carta
 class CartaAnimais extends Carta {
   constructor(element, valor, viradaParaCima, animal) {
     super(element, valor, viradaParaCima);
-    this.animal = animal;
+    this.animal = animal; // Nome do animal associado à carta
 
+    // Adiciona um evento de clique para virar a carta quando clicada
     this.element.addEventListener('click', this.flipCard.bind(this));
   }
 
+  // Método chamado quando a carta é clicada
   flipCard() {
-    if (CartaAnimais.lockBoard || this.viradaParaCima) return;
+    if (CartaAnimais.lockBoard || this.viradaParaCima) return; // Se o tabuleiro está bloqueado ou a carta já está virada, não faz nada
+
     if (!CartaAnimais.hasFlippedCard) {
-      this.virar();
-      CartaAnimais.hasFlippedCard = true;
-      CartaAnimais.firstCard = this;
+      // Se é a primeira carta virada
+      this.virar(); // Vira a carta
+      CartaAnimais.hasFlippedCard = true; // Define a primeira carta virada
+      CartaAnimais.firstCard = this; // Armazena a referência da primeira carta
     } else {
-      this.virar();
-      CartaAnimais.secondCard = this;
-      CartaAnimais.checkForMatch();
+      // Se é a segunda carta virada
+      this.virar(); // Vira a carta
+      CartaAnimais.secondCard = this; // Armazena a referência da segunda carta
+      CartaAnimais.checkForMatch(); // Verifica se as duas cartas são iguais
     }
   }
 
+  // Método estático para verificar se as duas cartas viradas são iguais
   static checkForMatch() {
-    let isMatch = CartaAnimais.firstCard.valor === CartaAnimais.secondCard.valor;
+    let isMatch = CartaAnimais.firstCard.valor === CartaAnimais.secondCard.valor; // Verifica se os valores das cartas são iguais
 
     if (isMatch) {
-      CartaAnimais.disableCards();
-      CartaAnimais.updateScore(true);
+      // Se as cartas são iguais
+      CartaAnimais.disableCards(); // Desabilita as cartas
+      CartaAnimais.updateScore(true); // Atualiza a pontuação (acerto)
     } else {
-      CartaAnimais.unflipCards();
-      CartaAnimais.updateScore(false);
+      // Se as cartas são diferentes
+      CartaAnimais.unflipCards(); // Desvira as cartas
+      CartaAnimais.updateScore(false); // Atualiza a pontuação (erro)
     }
   }
 
+  // Método estático para desabilitar as cartas viradas em caso de acerto
   static disableCards() {
-    CartaAnimais.firstCard.element.removeEventListener('click', CartaAnimais.firstCard.flipCard);
-    CartaAnimais.secondCard.element.removeEventListener('click', CartaAnimais.secondCard.flipCard);
+    CartaAnimais.firstCard.element.removeEventListener('click', CartaAnimais.firstCard.flipCard); // Remove o evento de clique da primeira carta
+    CartaAnimais.secondCard.element.removeEventListener('click', CartaAnimais.secondCard.flipCard); // Remove o evento de clique da segunda carta
 
-    CartaAnimais.resetBoard();
+    CartaAnimais.resetBoard(); // Reseta o estado do tabuleiro
   }
 
+  // Método estático para desvirar as cartas viradas em caso de erro
   static unflipCards() {
-    CartaAnimais.lockBoard = true;
+    CartaAnimais.lockBoard = true; // Bloqueia o tabuleiro temporariamente
 
     setTimeout(() => {
-      CartaAnimais.firstCard.virar();
-      CartaAnimais.secondCard.virar();
+      CartaAnimais.firstCard.virar(); // Desvira a primeira carta
+      CartaAnimais.secondCard.virar(); // Desvira a segunda carta
 
-      CartaAnimais.resetBoard();
-    }, 1500);
+      CartaAnimais.resetBoard(); // Reseta o estado do tabuleiro
+    }, 1500); // Espera 1,5 segundos antes de desvirar as cartas
   }
 
+  // Método estático para resetar o estado das variáveis de controle
   static resetBoard() {
-    CartaAnimais.hasFlippedCard = false;
-    CartaAnimais.lockBoard = false;
-    CartaAnimais.firstCard = null;
-    CartaAnimais.secondCard = null;
+    CartaAnimais.hasFlippedCard = false; // Reseta a primeira carta virada
+    CartaAnimais.lockBoard = false; // Desbloqueia o tabuleiro
+    CartaAnimais.firstCard = null; // Reseta a referência da primeira carta
+    CartaAnimais.secondCard = null; // Reseta a referência da segunda carta
   }
+
 
   static updateScore(isMatch) {
     if (isMatch) {
