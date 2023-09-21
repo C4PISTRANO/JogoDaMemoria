@@ -3,6 +3,9 @@
 <img src="src/img/Preview01.png" height="400px">
 <img src="src/img/Preview02.png" height="400px">
 </p>
+
+Acesse o link: https://c4pistrano.github.io/JogoDaMemoria/ para testar a aplicação.
+
 LAYOUT:
  
 Tabuleiro de cartas com colunas e linhas (ver número de cartas). Uma imagem na parte da frente, uma na parte de trás.
@@ -16,7 +19,7 @@ Classe para o jogo: Uma classe para o jogo em si. Esta classe deve incluir propr
 
 Classe para o tabuleiro: Uma classe para o tabuleiro do jogo. Esta classe deve incluir um método para embaralhar as cartas e outro para exibir o tabuleiro na tela.
 
-Adicionar herança: Uma classe para as cartas viradas para cima que herda da classe Carta, e uma classe para as cartas viradas para baixo que também herda da classe Carta. Isso permite que você crie instâncias das cartas viradas para cima e para baixo usando a mesma classe pai.
+Adicionar herança: Uma classe para as cartas viradas para cima que herda da classe Carta, e uma classe para as cartas viradas para baixo que também herda da classe Carta. Isso permite que sejam criadas instâncias das cartas viradas para cima e para baixo usando a mesma classe pai.
 
 
 FUNÇÕES:
@@ -31,11 +34,13 @@ NAVEGAÇÃO:
 Botões de navegação nas páginas.
 
 
-FALTA ADICIONAR:
+MENSAGEM DE FINALIZAÇÃO: 
 
-Mensagem de finalização: Uma mensagem parabenizando o jogador
+Uma mensagem parabenizando o jogador
 
-Pontuação: Um sistema de pontuação para o jogo, para que o jogador possa acompanhar seu desempenho.
+PONTUAÇÃO: 
+
+Um sistema de pontuação para o jogo, para que o jogador possa acompanhar seu desempenho.
 
 <hr>
 <p>Desenvolvido por: <a href="https://github.com/mcavalle">Mariana Cavalle</a>, <a href="https://github.com/hebertsanches">Hebert Gomes Sanches</a> e <a href="https://github.com/C4PISTRANO">Raphael Ferreira Capistrano</a></p>
